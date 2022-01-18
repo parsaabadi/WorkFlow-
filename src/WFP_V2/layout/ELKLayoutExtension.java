@@ -36,13 +36,20 @@ public class ELKLayoutExtension implements IELKLayoutExtension {
 		for (Entry<ElkGraphElement, Object> entry : layoutMapping.getGraphMap().entrySet()) {
 		    Object editPart = entry.getValue();
 		    
-		    if (editPart instanceof DNodeListEditPart || editPart instanceof DNodeEditPart) {
+		    if (editPart instanceof DNodeListEditPart) {
 		        EObject siriusDiagramElement = ((DNodeListEditPart) editPart).resolveTargetSemanticElement();
 		        String wfElementName = siriusDiagramElement.eClass().getName();
 		        IProperty<String> property = new Property("wfObjectType");
-//		        System.out.println("DNode1" + elementName);
+	//	        System.out.println("DNode1" + elementName);
 		        entry.getKey().setProperty(property, wfElementName);
-		    }
+		    } else if (editPart instanceof DNodeEditPart) {
+		    	EObject siriusDiagramElement = ((DNodeEditPart) editPart).resolveTargetSemanticElement();
+		        String wfElementName = siriusDiagramElement.eClass().getName();
+		        IProperty<String> property = new Property("wfObjectType");
+	//	        System.out.println("DNode1" + elementName);
+		        entry.getKey().setProperty(property, wfElementName);
+			}
+
 		}
 		
 	}

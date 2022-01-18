@@ -10,6 +10,7 @@ import org.eclipse.elk.core.util.IElkProgressMonitor;
 import org.eclipse.elk.graph.ElkEdge;
 import org.eclipse.elk.graph.ElkEdgeSection;
 import org.eclipse.elk.graph.ElkNode;
+import org.eclipse.elk.graph.properties.Property;
 import org.eclipse.elk.graph.util.ElkGraphUtil;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
@@ -51,7 +52,7 @@ public class LayoutProvider extends AbstractLayoutProvider {
         nodePlacingMonitor.logGraph(layoutGraph, "No node placed yet");
         
         for (ElkNode node : nodes) {
-        	System.out.println(node.getAllProperties());
+        	System.out.println(node.getProperty(new Property("wfObjectType")));
             node.setX(currX);
             node.setY(padding.top);
             
