@@ -97,6 +97,7 @@ public class LayoutProvider extends AbstractLayoutProvider {
                 ElkGraphUtil.createBendPoint(section, section.getEndX(), currY);
                                 
                 currY += edgeEdgeSpacing;
+                
                 edgeRoutingMonitor.log("currY: " + currY);
                 edgeRoutingMonitor.logGraph(layoutGraph, source.getIdentifier() + " -> " + target.getIdentifier());
             }
