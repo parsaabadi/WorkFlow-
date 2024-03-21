@@ -5,14 +5,13 @@ import WFP_V2.layout.LayoutProvider
 
 bundle {
     metadataClass LayoutMetadataProvider
-    idPrefix WFP_V2.layout
+    idPrefix "WFP_V2.layout"
 }
 
 option reverseInput : boolean {
     label "Reverse Input"
     description
-        "True if nodes should be placed in reverse order of their
-        appearance in the graph."
+        "True if nodes should be placed in reverse order of their appearance in the graph."
     default = false
     targets parents
 }
@@ -22,8 +21,8 @@ algorithm Layout(LayoutProvider) {
     description "Custom layout designed for WF+"
     metadataClass options.LayoutOptions
     supports reverseInput
-    supports org.eclipse.elk.padding = new ElkPadding(10)
-    supports org.eclipse.elk.spacing.edgeEdge = 5
-    supports org.eclipse.elk.spacing.edgeNode = 10
-    supports org.eclipse.elk.spacing.nodeNode = 10
+    supports "org.eclipse.elk.padding" = new ElkPadding(10)
+    supports "org.eclipse.elk.spacing.edgeEdge" = 5
+    supports "org.eclipse.elk.spacing.edgeNode" = 10
+    supports "org.eclipse.elk.spacing.nodeNode" = 10
 }
